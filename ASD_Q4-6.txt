@@ -1,0 +1,80 @@
+Q1. Perform basic Git operations by initializing a repository, configuring username and email, creating a file, staging changes, and committing the file. Demonstrate git status, git diff, and git log.
+Commands:
+git --version
+git config --global user.name "Your Name"
+git config --global user.email "your-email@example.com"
+
+mkdir GitPractical
+cd GitPractical
+
+git init
+git branch -M main
+
+echo "Hello Git" > index.html
+git status
+
+git add index.html
+git status
+
+git commit -m "Initial commit"
+
+echo "This is my practical" >> index.html
+git status
+git diff
+
+git add index.html
+git diff --staged
+git commit -m "Update index file"
+
+git log
+git log --oneline
+
+
+Q2. Create a Git repository and perform branching and merging operations. Create a new branch, make changes, commit them, switch branches, and merge the changes into the main branch.
+Commands:
+git branch
+git branch feature
+
+git switch feature
+
+echo "Feature branch content" >> index.html
+git status
+
+git add index.html
+git commit -m "Add feature content"
+
+git switch main
+
+cat index.html
+
+git merge feature
+
+cat index.html
+
+git status
+git log --oneline --graph --all
+
+
+Q3. Perform remote repository operations using Git and GitHub. Clone a repository, add a remote repository, commit changes, and demonstrate git push, git pull, and git fetch commands.
+Commands:
+git clone https://github.com/USERNAME/REPOSITORY.git
+cd REPOSITORY
+
+git remote -v
+
+echo "GitHub practical" > README.txt
+git add README.txt
+git commit -m "Add README file"
+
+git push -u origin main
+
+git fetch origin
+
+git log --oneline main..origin/main
+
+git pull origin main
+git status
+
+To add a remote manually to an existing local repository that does not already have an origin remote:
+git remote add origin https://github.com/USERNAME/REPOSITORY.git
+git remote -v
